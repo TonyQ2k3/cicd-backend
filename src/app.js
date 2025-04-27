@@ -16,6 +16,12 @@ const {
     deletePost
 } = require('./controllers/postController')
 
+const {
+    getComments,
+    createComment,
+    deleteComment
+} = require('./controllers/commentController')
+
 const authRoutes = require('./controllers/authController');
 
 
@@ -32,6 +38,13 @@ app.get('/posts/all', getPosts);
 app.get('/posts/all/:id', getOnePost);
 app.post('/posts', createPost);
 app.delete('/posts/:id', deletePost);
+
+
+// Comment routes
+
+app.get('/comments/:postId', getComments);
+app.post('/comments', createComment);
+app.delete('/comments/:id', deleteComment);
 
 
 // Auth routes
