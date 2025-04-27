@@ -13,7 +13,7 @@ mongoose.connect(process.env.MONGO_URI)
    .then(() => {
         app.listen(port, () => {
             console.log('Connected to database');
-            console.log(`Auth service listening at http://localhost:${port}`);
+            console.log(`Back-end listening at http://localhost:${port}`);
         });
    })
    .catch(err => console.log(err));
